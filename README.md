@@ -6,9 +6,9 @@ I have my boundary router sending 1Gbps ISP NETFLOW directly into Filebeat.
 
 Running Ubuntu 64bit on the Pi4.
 
-'''bash
+```
 sudo sysctl -w vm.max_map_count=262144
-'''
+```
 
 References:
 
@@ -16,8 +16,8 @@ https://www.elastic.co/guide/en/elasticsearch/reference/7.6/security-settings.ht
 
 After bringing it up, make sure you update the Kibana password using the below:
 
-bash```
-curl -H 'Content-Type:application/json' -XPUT http://elastic:12345678@10.1.1.7:9200/_xpack/security/user/kibana/_password -d "{\"password\": \"12345678\"}"
+```
+curl -H 'Content-Type:application/json' -XPUT http://elastic:12345678@elasticsearch:9200/_xpack/security/user/kibana/_password -d "{\"password\": \"12345678\"}"
 ```
 
 Please note:
