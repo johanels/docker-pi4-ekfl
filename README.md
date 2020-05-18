@@ -1,8 +1,8 @@
-# docker-pi4-ekfl
+# docker-pi4-ekfm
 Docker -> pi4 -> ElasticSearch + Kibana + Filebeat + Metricbeat
 
 Wanted to get a small ElasticSearch going for home LAB with basic monitoring and testing. This runs on a Raspberry Pi4 4Gb RAM with a 64Gb Class10 MicroSD.
-I have my boundary router sending 1Gbps ISP NETFLOW directly into Filebeat.
+I have my boundary router sending 1Gbps ISP NETFLOW directly into Filebeat. Packet sniffing also works... For a little while... Be warned...
 
 Running Ubuntu 64bit on the Pi4.
 
@@ -10,11 +10,7 @@ Running Ubuntu 64bit on the Pi4.
 sudo sysctl -w vm.max_map_count=262144
 ```
 
-References:
-
-https://www.elastic.co/guide/en/elasticsearch/reference/7.6/security-settings.html#api-key-service-settings
-
-After bringing it up, make sure you update the Kibana password using the below:
+After bringing the Dockers up, make sure you update the Kibana password using the below:
 
 ```
 curl -H 'Content-Type:application/json' -XPUT http://elastic:12345678@elasticsearch:9200/_xpack/security/user/kibana/_password -d "{\"password\": \"12345678\"}"
