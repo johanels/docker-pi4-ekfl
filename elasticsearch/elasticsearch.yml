@@ -1,0 +1,46 @@
+# ======================== Elasticsearch Configuration =========================
+#
+# ---------------------------------- Cluster -----------------------------------
+#
+cluster.name: pi-cluster
+#
+# ------------------------------------ Node ------------------------------------
+#
+node.name: node-1
+#
+node.attr.rack: r1
+#
+# ----------------------------------- Paths ------------------------------------
+#
+#path.data: /path/to/data
+#
+#path.logs: /path/to/logs
+#
+# ----------------------------------- Memory -----------------------------------
+#
+# Lock the memory on startup:
+#
+#bootstrap.memory_lock: true
+#
+# ---------------------------------- Network -----------------------------------
+#
+network.host: 0.0.0.0
+#
+http.port: 9200
+#
+# --------------------------------- Discovery ----------------------------------
+#
+discovery.type: single-node
+#
+# ---------------------------------- Various -----------------------------------
+#
+xpack.security.enabled: true
+xpack.ml.enabled: false
+
+# API key service settings
+# https://www.elastic.co/guide/en/elasticsearch/reference/7.6/security-settings.html#api-key-service-settings
+xpack.security.authc.api_key.enabled: true
+xpack.security.authc.api_key.hashing.algorithm: pbkdf2
+xpack.security.authc.api_key.cache.ttl: 1d
+xpack.security.authc.api_key.cache.max_keys: 10000
+xpack.security.authc.api_key.cache.hash_algo: ssha256
