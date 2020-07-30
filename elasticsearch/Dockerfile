@@ -15,9 +15,9 @@ WORKDIR /home/elasticsearch
 
 USER elasticsearch:root
 
-RUN curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.6.2-no-jdk-linux-x86_64.tar.gz && \
-    tar zxvf elasticsearch-7.6.2-no-jdk-linux-x86_64.tar.gz --strip-components=1 && \
-    rm -rf elasticsearch-7.6.2-no-jdk-linux-x86_64.tar.gz
+RUN curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.8.1-no-jdk-linux-x86_64.tar.gz && \
+    tar zxvf elasticsearch-7.8.1-no-jdk-linux-x86_64.tar.gz --strip-components=1 && \
+    rm -rf elasticsearch-7.8.1-no-jdk-linux-x86_64.tar.gz
 
 ADD elasticsearch.yml config/elasticsearch.yml
 

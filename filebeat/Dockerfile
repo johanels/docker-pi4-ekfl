@@ -5,7 +5,7 @@ FROM golang
 RUN go get github.com/elastic/beats || true
 # Build and install filbeat
 RUN cd src/github.com/elastic/beats/ && \
-    git checkout 7.6 && \
+    git checkout 7.8.1 && \
     cd x-pack/filebeat/ && \
     go build && \
     go install
@@ -14,8 +14,8 @@ RUN cd src/github.com/elastic/beats/ && \
 ADD files .
 
 # Enable the modules
-RUN rm kibana/7/dashboard/Filebeat-aws-elb-overview.json
-RUN rm kibana/7/dashboard/Filebeat-aws-vpcflow-overview.json
+#RUN rm kibana/7/dashboard/Filebeat-aws-elb-overview.json
+#RUN rm kibana/7/dashboard/Filebeat-aws-vpcflow-overview.json
 
 # Expose ports for netflow and syslog
 EXPOSE 2055 2055/udp 9000 9000/udp

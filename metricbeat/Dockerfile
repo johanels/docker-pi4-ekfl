@@ -6,15 +6,15 @@ RUN go get github.com/elastic/beats || true
 
 # Build and install metricbeat
 RUN cd src/github.com/elastic/beats/ && \
-    git checkout 7.6 && \
+    git checkout 7.8.1 && \
     cd x-pack/metricbeat/ && \
     go build && \
     go install
 
-# 
-RUN curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.2-linux-x86_64.tar.gz && \
-    tar xzvf metricbeat-7.6.2-linux-x86_64.tar.gz && \
-    mv /go/metricbeat-7.6.2-linux-x86_64/kibana /go/
+# https://www.elastic.co/downloads/beats/metricbeat
+RUN curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.8.1-linux-x86_64.tar.gz && \
+    tar xzvf metricbeat-7.8.1-linux-x86_64.tar.gz && \
+    mv /go/metricbeat-7.8.1-linux-x86_64/kibana /go/
 
 # Add config file
 ADD metricbeat.yml metricbeat.yml
