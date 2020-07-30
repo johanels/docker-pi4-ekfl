@@ -15,7 +15,7 @@ filebeat.inputs:
     protocol.udp:
       host: "0.0.0.0:9000"
   - type: syslog
-    protocol.tcp:
+    protocol.udp:
       host: "0.0.0.0:9000"
 
 filebeat.config.modules:
