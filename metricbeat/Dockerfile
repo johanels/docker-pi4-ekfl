@@ -6,7 +6,7 @@ RUN go get github.com/elastic/beats || true
 
 # Build and install metricbeat
 RUN cd src/github.com/elastic/beats/ && \
-    git checkout 7.8.1 && \
+    git checkout 7.8 && \
     cd x-pack/metricbeat/ && \
     go build && \
     go install

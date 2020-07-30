@@ -10,11 +10,7 @@ Running Ubuntu 64bit on the Pi4.
 sudo sysctl -w vm.max_map_count=262144
 ```
 
-After bringing the Dockers up, make sure you update the Kibana password using the below:
-
-```
-curl -H 'Content-Type:application/json' -XPUT http://elastic:12345678@elasticsearch:9200/_xpack/security/user/kibana/_password -d "{\"password\": \"12345678\"}"
-```
+Open http://server:5601 and login using elastic and 12345678.
 
 Please note:
 
