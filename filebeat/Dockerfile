@@ -10,7 +10,13 @@ RUN cd src/github.com/elastic/beats/ && \
     go build && \
     go install
 
-# Add the custom config and other files from https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.2-linux-x86_64.tar.gz
+# Add the custom config and other files from https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.8.1-linux-x86_64.tar.gz
+RUN wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.8.1-linux-x86_64.tar.gz && \
+    tar zxvf filebeat-7.8.1-linux-x86_64.tar.gz && \
+    mv filebeat-7.8.1-linux-x86_64/* ./ && \
+    rm -rf filebeat-7.8.1-linux-x86_64 && \
+    rm -rf filebeat-7.8.1-linux-x86_64.tar.gz
+
 ADD files .
 
 # Expose ports for netflow and syslog
