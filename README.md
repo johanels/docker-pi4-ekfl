@@ -5,7 +5,6 @@ Wanted to get a small ElasticSearch going for home LAB with basic monitoring and
 I have my boundary router sending 1Gbps ISP NETFLOW directly into Filebeat. Packet sniffing also works... For a little while... Be warned...
 
 Running Ubuntu 64bit on the Pi4.
-
 ```
 sudo sysctl -w vm.max_map_count=262144
 ```

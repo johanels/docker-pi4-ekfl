@@ -17,7 +17,7 @@ RUN wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.8.1-li
     rm -rf filebeat-7.8.1-linux-x86_64 && \
     rm -rf filebeat-7.8.1-linux-x86_64.tar.gz
 
-ADD files .
+ADD filebeat.yml .
 
 # Expose ports for netflow and syslog
 EXPOSE 2055 2055/udp 9000 9000/udp

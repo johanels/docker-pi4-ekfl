@@ -32,7 +32,7 @@ setup.kibana:
 output.elasticsearch:
     # Array of hosts to connect to.
     hosts: ["elasticsearch:9200"]
-    pipeline: geoip-info
+    pipeline: geoip-netflow
     #protocol: "https"
     #api_key: "id:api_key"
     username: "elastic"
